@@ -17,15 +17,10 @@ class LeetCode:
             x: The number that we want to check if it is palindrome or not
         
         """
-        x_copy = x # Copy the number that will be using to check
-        r = 0 # Follow the rest of the division by 10
-
-        while x_copy > 0:
-            modulo10_rest = x_copy % 10 # The rest of the division by 10
-            r = 10 * r + modulo10_rest
-            x_copy = x_copy // 10 # the result of integer division by 10
-
-        if r == x:
-            print(x, "is palindrome")
-        else:
-            print(x, "is not palindrome")
+        if x < 0 or (x % 10 == 0 and x != 0):
+            return False
+        reversed_half = 0 # Initialize the reversed half that will help us to check if the number is palindrome
+        while x > reversed_half:
+            reversed_half = reversed_half * 10 + x % 10 # Add the last digit of x to the reversed half
+            x = x // 10 # Remove the last digit of x
+        return x == reversed_half or x == reversed_half // 10
