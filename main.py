@@ -5,7 +5,7 @@ if __name__ == "__main__":
 
     # Problem of Palindrome number Testing
     n1 = 12121
-    leet_obj.isPalindrome(n1)
+    print(n1, "is palindrome?: ",leet_obj.isPalindrome(n1))
 
     n2 = 321
-    leet_obj.isPalindrome(n2)
+    print(n2, "is palindrome?: ",leet_obj.isPalindrome(n2))
