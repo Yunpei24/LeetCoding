@@ -2,6 +2,8 @@
 * leetcode.py Contains the solution to LeetCode problems.
 """
 
+from typing import List
+
 class LeetCode:
     """
     A class to represent a solution to LeetCode problems.
@@ -24,3 +26,31 @@ class LeetCode:
             reversed_half = reversed_half * 10 + x % 10 # Add the last digit of x to the reversed half
             x = x // 10 # Remove the last digit of x
         return x == reversed_half or x == reversed_half // 10
+    
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        """Find two numbers in the list that add up to the target number.
+        Examples:
+            nums = [2, 7, 11, 15], target = 9
+            The two numbers that add up to 9 are at indices: [0, 1]
+            nums = [3, 2, 4], target = 6
+            The two numbers that add up to 6 are at indices: [1, 2]
+        
+        Args:
+            nums: The list of numbers that we want to check if there are two numbers that add up to the target number
+            target: The target number that we want to check if there are two numbers that add up to it
+        
+        Returns:
+            A list of two indices of the numbers that add up to the target number
+        """
+        n = len(nums)
+        if n == 0: # Be sure the list of numbers is not empty
+            return False
+        
+        for i in range(n): # browse list of numbers
+            k = n - 1 - i # The index to do the reverse parcours of the list of numbers
+            for j in range(i + 1, n): # browse the list of numbers after the index i
+                l = n - 1 - j # browse the reverse parcours of j
+                if nums[i] + nums[j] == target:
+                    return [i, j]
+                if nums[k] + nums[l] == target:
+                    return [l, k]
