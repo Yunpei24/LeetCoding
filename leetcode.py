@@ -54,3 +54,29 @@ class LeetCode:
                     return [i, j]
                 if nums[k] + nums[l] == target:
                     return [l, k]
+                
+    def findMedianSortedArrays(self, nums1: List[int], nums2: List[int]) -> float:
+        """"Find the median of two sorted arrays.
+        Examples:
+            nums1 = [1, 3], nums2 = [2]
+            The median is 2.0
+            nums1 = [1, 2], nums2 = [3, 4]
+            The median is (2 + 3) / 2 = 2.5
+        Args:
+            nums1: The first sorted array
+            nums2: The second sorted array
+        Returns:
+            The median of the two sorted arrays (float)
+        """
+        n1 = len(nums1)
+        n2 = len(nums2)
+        if n1 == 0 and n2 == 0: return "First and second List are empty"
+
+        nums1.extend(nums2) # Merge the two sorted arrays
+        nums1.sort() # Be sure the list of numbers is sorted
+        idx = len(nums1)//2 # The index of the median
+
+        if len(nums1) % 2 != 0: # If the length of the list of numbers is odd
+            return nums1[idx]
+        else:
+            return (nums1[idx -1] + nums1[idx]) / 2
