@@ -26,3 +26,14 @@ if __name__ == "__main__":
     nums4 = [3, 2, 3]
     target4 = 6
     print("The two numbers that add up to", target4, "are at indices:", leet_obj.twoSum(nums4, target4))
+
+    # Problem of Median of Two Sorted Arrays Testing
+    nums5 = [1, 3]
+    nums6 = [2]
+    print("The median of the two sorted arrays is:", leet_obj.findMedianSortedArrays(nums5, nums6))
+    nums7 = [1, 2]
+    nums8 = [3, 4]
+    print("The median of the two sorted arrays is:", leet_obj.findMedianSortedArrays(nums7, nums8))
+    nums9 = []
+    nums10 = [1]
+    print("The median of the two sorted arrays is:", leet_obj.findMedianSortedArrays(nums9, nums10))
