@@ -37,3 +37,15 @@ if __name__ == "__main__":
     nums9 = []
     nums10 = [1]
     print("The median of the two sorted arrays is:", leet_obj.findMedianSortedArrays(nums9, nums10))
+
+    # Problem of Happy Number Testing
+    n3 = 19
+    print(n3, "is happy number?: ", leet_obj.isHappy(n3)) # Output should be True
+    n4 = 2
+    print(n4, "is happy number?: ", leet_obj.isHappy(n4)) # Output should be False
+    n5 = 7
+    print(n5, "is happy number?: ", leet_obj.isHappy(n5)) # Output should be True
+    n6 = 4
+    print(n6, "is happy number?: ", leet_obj.isHappy(n6)) # Output should be False
+    n7 = 1
+    print(n7, "is happy number?: ", leet_obj.isHappy(n7)) # Output should be True
