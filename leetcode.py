@@ -80,3 +80,41 @@ class LeetCode:
             return nums1[idx]
         else:
             return (nums1[idx -1] + nums1[idx]) / 2
+        
+    def isHappy(self, n: int) -> bool:
+        """Check if a number is a happy number.
+        A happy number is a number defined by the following process:
+        Starting with any positive integer, replace the number by the sum of the squares of its digits,
+        and repeat the process until the number equals 1 (where it will stay), or it loops endlessly in a cycle that does not include 1.
+        Examples:
+            19 is a happy number: 1^2 + 9^2 = 82,
+                                  8^2 + 2^2 = 68,
+                                  6^2 + 8^2 = 100,
+                                  1^2 + 0^2 + 0^2 = 1
+            2 is not a happy number: 2^2 = 4,
+                                     4^2 = 16,
+                                     1^2 + 6^2 = 37,
+                                     3^2 + 7^2 = 58,
+                                     5^2 + 8^2 = 89,
+                                     8^2 + 9^2 = 145,
+                                     1^2 + 4^2 + 5^2 = 42,
+                                     4^2 + 2^2 = 20,
+                                     2^2 + 0^2 = 4 (cycle)
+        Args:
+            n: The number that we want to check if it is a happy number or not
+        Returns:
+            True if the number is a happy number, False otherwise
+    """
+        if n < 0 : # Be sure the number is not negative
+            return False
+        if n == 1:
+            return True 
+        check = [] # List to check if we have already seen the number
+        while n != 1:
+            digits = [int(i) for i in str(n)] # Convert the number to a list of digits
+            n = sum(map(lambda x: x ** 2, digits)) # Sum the square of the digits
+            # Check if the number is already in the list or if the number is greater than 2^31 - 1
+            if (n in check) or n >= (2 ** 31 - 1):
+                return False
+            check.append(n)
+        return True
