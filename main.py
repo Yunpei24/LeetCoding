@@ -49,3 +49,23 @@ if __name__ == "__main__":
     print(n6, "is happy number?: ", leet_obj.isHappy(n6)) # Output should be False
     n7 = 1
     print(n7, "is happy number?: ", leet_obj.isHappy(n7)) # Output should be True
+
+    # Problem of romanToInt Testing
+    roman1 = "III"
+    print(f"The integer value of the roman numeral '{roman1}' is: {leet_obj.romanToInt(roman1)}")  # Output should be 3
+    roman2 = "IV"
+    print(f"The integer value of the roman numeral '{roman2}' is: {leet_obj.romanToInt(roman2)}")  # Output should be 4
+    roman3 = "IX"
+    print(f"The integer value of the roman numeral '{roman3}' is: {leet_obj.romanToInt(roman3)}")  # Output should be 9
+    roman4 = "LVIII"
+    print(f"The integer value of the roman numeral '{roman4}' is: {leet_obj.romanToInt(roman4)}")  # Output should be 58
+    roman5 = "MCMXCIV"
+    print(f"The integer value of the roman numeral '{roman5}' is: {leet_obj.romanToInt(roman5)}")  # Output should be 1994
+
+    # Find the index of the first occurrence of needle in haystack
+    haystack1 = "sadbutsad"
+    needle1 = "sad"
+    print(f"The index of the first occurrence of '{needle1}' in '{haystack1}' is: {leet_obj.strStr(haystack1, needle1)}")  # Output should be 0
+    haystack2 = "leetcode"
+    needle2 = "leeto"
+    print(f"The index of the first occurrence of '{needle2}' in '{haystack2}' is: {leet_obj.strStr(haystack2, needle2)}")  # Output should be -1
