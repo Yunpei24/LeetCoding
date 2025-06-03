@@ -69,3 +69,17 @@ if __name__ == "__main__":
     haystack2 = "leetcode"
     needle2 = "leeto"
     print(f"The index of the first occurrence of '{needle2}' in '{haystack2}' is: {leet_obj.strStr(haystack2, needle2)}")  # Output should be -1
+
+    # Problem of Longest Common Prefix Testing
+    strs1 = ["flower", "flow", "flight"]
+    print(f"The longest common prefix of {strs1} is: '{leet_obj.longestCommonPrefix(strs1)}'")  # Output should be "fl"
+    strs2 = ["dog", "racecar", "car"]
+    print(f"The longest common prefix of {strs2} is: '{leet_obj.longestCommonPrefix(strs2)}'")  # Output should be ""
+    strs3 = ["a"]
+    print(f"The longest common prefix of {strs3} is: '{leet_obj.longestCommonPrefix(strs3)}'")  # Output should be "a"
+    strs4 = ["", "b"]
+    print(f"The longest common prefix of {strs4} is: '{leet_obj.longestCommonPrefix(strs4)}'")  # Output should be ""
+    strs5 = ["c", "c"]
+    print(f"The longest common prefix of {strs5} is: '{leet_obj.longestCommonPrefix(strs5)}'")  # Output should be "c"
+    strs6 = ["ab", "a"]
+    print(f"The longest common prefix of {strs6} is: '{leet_obj.longestCommonPrefix(strs6)}'")  # Output should be "a"
