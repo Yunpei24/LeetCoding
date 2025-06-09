@@ -161,3 +161,60 @@ class LeetCode:
                 if not prefix:
                     return ""
         return prefix
+    
+    def isValid(self, s: str) -> bool:
+        """Check if a string is a valid parentheses.
+        A string is valid if all open parentheses are closed by the same type of parentheses and in the correct order.
+        Args:
+            s: The string that we want to check if it is a valid parentheses
+        Returns:
+            True if the string is a valid parentheses, False otherwise
+        """
+        stack = []
+        mapping = {')': '(', '}': '{', ']': '['}
+        
+        for char in s:
+            if char in mapping.values():
+                stack.append(char)
+            elif char in mapping.keys():
+                if not stack or stack[-1] != mapping[char]:
+                    return False
+                stack.pop()
+        
+        return not stack  
+
+    def lengthOfLastWord(self, s: str) -> int:
+        """Find the length of the last word in a string.
+        
+        Args:
+            s: The input string
+        Returns:
+            The length of the last word in the string
+        """
+        words = s.strip().split()
+        if not words:
+            return 0
+        return len(words[-1])
+    
+    def mysqrt(self, x: int) -> int:
+        """Calculate the square root of a non-negative integer x.
+        
+        Args:
+            x: The non-negative integer to find the square root of
+        Returns:
+            The square root of x
+        """
+        if x < 0:
+            return -1
+        if x == 0:
+            return 0
+        left, right = 0, x
+        while left <= right:
+            mid = left + (right - left) // 2
+            if mid * mid == x:
+                return mid
+            elif mid * mid < x:
+                left = mid + 1
+            else:
+                right = mid - 1
+        return right  # The largest integer whose square is less than or equal to x
